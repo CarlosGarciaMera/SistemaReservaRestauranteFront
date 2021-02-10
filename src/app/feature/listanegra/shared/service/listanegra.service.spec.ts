@@ -9,7 +9,7 @@ import { ListanegraService } from './listanegra.service';
 describe('ListanegraService', () => {
   let service: ListanegraService;
   let httpMock: HttpTestingController;
-  const endPoint = `http://localhost:8081/reserva/listnegra`;
+  const endPoint = `http://localhost:8081/reserva/listanegra`;
 
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
@@ -25,17 +25,17 @@ describe('ListanegraService', () => {
     expect(servicioListaNegra).toBeTruthy();
   });
 
-  it('deberia listar mesas', () => {
-    const mesasMock = [
+  it('deberia listar VETADOS', () => {
+    const vetadosMock = [
       new ListaNegra('1','1','Vetado 1'), new ListaNegra('2','2','Vetado 2')
     ];
-    service.listar().subscribe(mesas => {
-      expect(mesas.length).toBe(3);
-      expect(mesas).toEqual(mesasMock);
+    service.listar().subscribe(vetados => {
+      expect(vetados.length).toBe(2);
+      expect(vetados).toEqual(vetadosMock);
     });
     const req = httpMock.expectOne(endPoint);
     expect(req.request.method).toBe('GET');
-    req.flush(mesasMock);
+    req.flush(vetadosMock);
   });
 
   it('deberia crear un vetado', () => {
