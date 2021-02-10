@@ -1,0 +1,25 @@
+<table id="reservas" class="separado" style="width:50%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id Cliente</th>
+            <th>Nombre Cliente</th>
+            <th>Cantidad Comensales</th>
+            <th>id Mesa</th>
+            <th>Fecha </th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody id="tbady1" class="display" style="width:100%">
+        <tr *ngFor="let reserva of reservas | async">
+            <td>{{reserva.id}}</td>
+            <td>{{reserva.idCliente}}</td>
+            <td>{{reserva.nombreCliente}}</td>
+            <td>{{reserva.numeroComensales}}</td>
+            <td>{{reserva.idMesa}}</td>
+            <td>{{reserva.fecha}}</td>
+            <td> <button (click)="cancelarReserva(reserva.id)">Eliminar</button> </td>
+        </tr>
+    </tbody>
+</table>
+<router-outlet></router-outlet>

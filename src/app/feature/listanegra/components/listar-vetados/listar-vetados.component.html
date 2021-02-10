@@ -1,0 +1,19 @@
+<table id="vetados" class="display" style="width:50%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Identificacion cliente</th>
+            <th>Nombre cliente</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody id="tbady1" class="display" style="width:100%">
+        <tr *ngFor="let vetado of vetados | async">
+            <td>{{vetado.id}}</td>
+            <td>{{vetado.idCliente}}</td>
+            <td>{{vetado.nombreCliente}}</td>
+            <td> <button (click)="eliminar(vetado.id)">Eliminar</button> </td>
+        </tr>
+    </tbody>
+</table>
+<router-outlet></router-outlet>

@@ -1,0 +1,27 @@
+<table id="example" class="display" style="width:50%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Cantidad Comensales</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody id="tbady1" class="display" style="width:100%">
+        <tr *ngFor="let mesa of listaMesas | async">
+            <td>{{mesa.id}}</td>
+            <td>{{mesa.nombre}}</td>
+            <td>{{mesa.cantidadMaximaComensales}}</td>
+            <td> <button (click)="eliminar(mesa.id)">Eliminar</button> </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Office</th>
+            <th>Action</th>
+        </tr>
+    </tfoot>
+</table>
+<router-outlet></router-outlet>
