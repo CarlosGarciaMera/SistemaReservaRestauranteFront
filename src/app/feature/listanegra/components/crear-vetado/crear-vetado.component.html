@@ -5,8 +5,8 @@
       <label>Id Cliente:</label>
     </div>
     <div class="col-sm-4">
-      <input validar type="text" id="idCliente" name="idCliente" placeholder="Id del cliente" class="form-control"
-        formControlName="idCliente">
+      <input validar type="text" id="idVetado" name="idVetado" placeholder="Id del cliente" class="form-control"
+        formControlName="idVetado">
     </div>
   </div>
   <div class="row">
@@ -14,11 +14,11 @@
       <label>Nombre CLiente:</label>
     </div>
     <div class="col-sm-4">
-      <input validar type="text" id="nombreCliente" name="nombreCliente" placeholder="Nmbre del cliente"
-        class="form-control" formControlName="nombreCliente">
+      <input validar type="text" id="nombreVetado" name="nombreVetado" placeholder="Nombre del cliente"
+        class="form-control" formControlName="nombreVetado">
     </div>
   </div>
   <div class="row">
-      <button (click)="crear()">Guardar</button>
+      <button id="botonGuardarVetado" (click)="crear()">Guardar</button>
   </div>
 </form>

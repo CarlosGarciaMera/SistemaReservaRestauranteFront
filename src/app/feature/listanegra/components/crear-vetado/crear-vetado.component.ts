@@ -31,8 +31,8 @@ export class CrearVetadoComponent implements OnInit {
 
   private construirFormulario() {
     this.formularioVetado = new FormGroup({
-      idCliente: new FormControl('', [Validators.required]),
-      nombreCliente: new FormControl('', [Validators.required])
+      idVetado: new FormControl('', [Validators.required]),
+      nombreVetado: new FormControl('', [Validators.required])
     });
   }
 

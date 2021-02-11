@@ -41,14 +41,14 @@ describe('CrearVetadoComponent', () => {
   });
 
   it('formulario es valido', () => {
-    component.formularioVetado.controls.idCliente.setValue('1');
-    component.formularioVetado.controls.nombreCliente.setValue('Vetado 1');
+    component.formularioVetado.controls.idVetado.setValue('1');
+    component.formularioVetado.controls.nombreVetado.setValue('Vetado 1');
     expect(component.formularioVetado.valid).toBeTruthy();
   });
 
   it('Crear Vetado', () => {
-    component.formularioVetado.controls.idCliente.setValue('1');
-    component.formularioVetado.controls.nombreCliente.setValue('Vetado 1');
+    component.formularioVetado.controls.idVetado.setValue('1');
+    component.formularioVetado.controls.nombreVetado.setValue('Vetado 1');
     component.crear();
   });
 });

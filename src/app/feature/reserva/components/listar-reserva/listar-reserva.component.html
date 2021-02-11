@@ -1,4 +1,4 @@
-<table id="reservas" class="separado" style="width:50%">
+<table id="reservas" class="separado" style="width:50%" >
     <thead>
         <tr>
             <th>Id</th>
@@ -10,7 +10,7 @@
             <th>Accion</th>
         </tr>
     </thead>
-    <tbody id="tbady1" class="display" style="width:100%">
+    <tbody id="bodyReservas" class="bodyReservas" style="width:100%">
         <tr *ngFor="let reserva of reservas | async">
             <td>{{reserva.id}}</td>
             <td>{{reserva.idCliente}}</td>

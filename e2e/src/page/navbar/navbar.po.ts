@@ -1,10 +1,18 @@
 import { by, element } from 'protractor';
 
 export class NavbarPage {
-    linkHome = element(by.xpath('/html/body/app-root/app-navbar/nav/a[1]'));
-    linkProducto = element(by.xpath('/html/body/app-root/app-navbar/nav/a[2]'));
 
-    async clickBotonProductos() {
-        await this.linkProducto.click();
+    linkLintaNegra = element(by.xpath('/html/body/app-root/app-navbar/nav/a[2]'));
+    linkMesas = element(by.class('/html/body/app-root/app-navbar/nav/a[3]'));
+    linkReserva = element(by.xpath('/html/body/app-root/app-navbar/nav/a[4]'));
+
+    async clickLinkListaNegra() {
+        await this.linkLintaNegra.click();
+    }
+    async clickLinkMesas() {
+        await this.linkMesas.click();
+    }
+    async clickLinkReservas() {
+        await this.linkReserva.click();
     }
 }

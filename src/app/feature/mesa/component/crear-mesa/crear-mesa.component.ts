@@ -32,7 +32,7 @@ export class CrearMesaComponent implements OnInit {
 
   private construirFormularioMesa() {
     this.formulario = new FormGroup({
-      nombre: new FormControl('', [Validators.required]),
+      nombreMesa: new FormControl('', [Validators.required]),
       cantidadMaximaComensales: new FormControl('', [Validators.required])
     });
   }
