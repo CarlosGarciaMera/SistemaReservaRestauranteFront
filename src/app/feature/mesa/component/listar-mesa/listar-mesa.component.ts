@@ -22,7 +22,6 @@ export class ListarMesaComponent implements OnInit {
     this.servicio.eliminar(id) .subscribe(
       _ => {
         this.ngOnInit();
-        console.log("!Completed");
     },
       error => console.log(JSON.stringify(error))
     );

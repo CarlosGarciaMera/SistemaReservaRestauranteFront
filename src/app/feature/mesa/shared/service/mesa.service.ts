@@ -3,9 +3,7 @@ import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
 import { Mesa } from '../model/mesa';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MesaService {
 
   constructor(protected http: HttpService) {}

@@ -24,7 +24,6 @@ export class CrearReservaComponent implements OnInit {
       .subscribe(
         _ => {
           this.router.navigate(['reserva/listar']);
-          console.log("!Completed");
       },
         error => {
           console.log(JSON.stringify(error));

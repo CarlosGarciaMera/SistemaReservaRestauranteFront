@@ -7,7 +7,7 @@ import { Reserva } from '../model/reserva';
 export class ReservaService {
 
   constructor(protected http: HttpService) { }
-  
+
   public listar() {
     return this.http.doGet<Reserva[]>(`${environment.endpoint}/reservas`, this.http.optsName('consultar mesas'));
   }

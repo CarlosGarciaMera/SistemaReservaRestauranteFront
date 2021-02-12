@@ -26,7 +26,7 @@ export class CrearMesaComponent implements OnInit {
           this.router.navigate(['mesa/listar']);
       },
         error => {
-          console.log(JSON.stringify(error))
+          console.log(JSON.stringify(error));
           Swal.fire({
             icon : 'error',
             title : error.error.mensaje

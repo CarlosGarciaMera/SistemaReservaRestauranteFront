@@ -44,7 +44,7 @@ describe('CrearReservaComponent', () => {
     component.formularioReserva.controls.idCliente.setValue('1');
     component.formularioReserva.controls.nombreCliente.setValue('Cliente 1');
     component.formularioReserva.controls.numeroComensales.setValue(4);
-    component.formularioReserva.controls.fecha.setValue("2021-03-02 10:00:00");
+    component.formularioReserva.controls.fecha.setValue('2021-03-02 10:00:00');
     expect(component.formularioReserva.valid).toBeTruthy();
   });
 
@@ -52,7 +52,7 @@ describe('CrearReservaComponent', () => {
     component.formularioReserva.controls.idCliente.setValue('1');
     component.formularioReserva.controls.nombreCliente.setValue('Cliente 1');
     component.formularioReserva.controls.numeroComensales.setValue(4);
-    component.formularioReserva.controls.fecha.setValue("2021-03-02 10:00:00");
+    component.formularioReserva.controls.fecha.setValue('2021-03-02 10:00:00');
     component.reservar();
   });
 });

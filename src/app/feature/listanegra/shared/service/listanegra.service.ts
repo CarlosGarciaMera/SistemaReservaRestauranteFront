@@ -3,9 +3,7 @@ import { HttpService } from '@core/services/http.service';
 import { environment } from 'src/environments/environment';
 import { ListaNegra } from '../model/listanegra';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ListanegraService {
 
   constructor(protected http: HttpService) {}
