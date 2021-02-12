@@ -14,24 +14,24 @@ describe('workspace-project Vetados', () => {
         listaNegra = new ListaNegraPage();
     });
 
-    it('Deberia crear mesa', () => {
+    it('Deberia crear mesa', async () => {
         const NOMBRE_VETADO = 'Cliente Vetado';
         const ID_VETADO = '1';
 
-        page.navigateTo();
-        navBar.clickLinkListaNegra();
-        listaNegra.clickLinkCrearVetado();
-        listaNegra.ingresarNombreVetado(NOMBRE_VETADO);
-        listaNegra.ingresarIdVetado(ID_VETADO);
-        listaNegra.clickBotonCrearVetado();
+        await page.navigateTo();
+        await navBar.clickLinkListaNegra();
+        await listaNegra.clickLinkCrearVetado();
+        await listaNegra.ingresarNombreVetado(NOMBRE_VETADO);
+        await listaNegra.ingresarIdVetado(ID_VETADO);
+        await listaNegra.clickBotonCrearVetado();
         // Adicionamos las validaciones despues de la creación
         expect(1).toEqual(listaNegra.contarMesas());
     });
 
-    it('Deberia listar mesas', () => {
-        page.navigateTo();
-        navBar.clickLinkMesas();
-        listaNegra.clickLinkListarVetados();
+    it('Deberia listar mesas', async () => {
+        await page.navigateTo();
+        await navBar.clickLinkMesas();
+        await listaNegra.clickLinkListarVetados();
 
         expect(1).toBe(listaNegra.contarMesas());
     });

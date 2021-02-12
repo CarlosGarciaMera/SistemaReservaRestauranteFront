@@ -14,24 +14,24 @@ describe('workspace-project Mesa', () => {
         mesa = new MesaPage();
     });
 
-    it('Deberia crear mesa', () => {
+    it('Deberia crear mesa', async () => {
         const NOMBRE_MESA = 'Mesa Prueba';
         const CANTIDAD_MAXIMA_COMENSALES = 8;
 
-        page.navigateTo();
-        navBar.clickLinkMesas();
-        mesa.clickLinkCrearMesa();
-        mesa.ingresarNombreMesa(NOMBRE_MESA);
-        mesa.ingresarCantidadMaximaComensales(CANTIDAD_MAXIMA_COMENSALES);
-        mesa.clickBotonCrearMesa();
+        await page.navigateTo();
+        await navBar.clickLinkMesas();
+        await mesa.clickLinkCrearMesa();
+        await mesa.ingresarNombreMesa(NOMBRE_MESA);
+        await mesa.ingresarCantidadMaximaComensales(CANTIDAD_MAXIMA_COMENSALES);
+        await mesa.clickBotonCrearMesa();
         // Adicionamos las validaciones despues de la creación
         expect(1).toEqual(mesa.contarMesas());
     });
 
-    it('Deberia listar mesas', () => {
-        page.navigateTo();
-        navBar.clickLinkMesas();
-        mesa.clickLinkListarMesas();
+    it('Deberia listar mesas', async () => {
+        await page.navigateTo();
+        await navBar.clickLinkMesas();
+        await mesa.clickLinkListarMesas();
 
         expect(1).toBe(mesa.contarMesas());
     });
