@@ -14,7 +14,7 @@ describe('workspace-project Vetados', () => {
         listaNegra = new ListaNegraPage();
     });
 
-    it('Deberia crear mesa', async () => {
+    it('Deberia crear vetado', async () => {
         const NOMBRE_VETADO = 'Cliente Vetado';
         const ID_VETADO = '1';
 
@@ -25,15 +25,15 @@ describe('workspace-project Vetados', () => {
         await listaNegra.ingresarIdVetado(ID_VETADO);
         await listaNegra.clickBotonCrearVetado();
         // Adicionamos las validaciones despues de la creación
-        expect(1).toEqual(listaNegra.contarMesas());
+        expect(1).toEqual(listaNegra.contarVetados());
     });
 
-    it('Deberia listar mesas', async () => {
+    it('Deberia listar vetados', async () => {
         await page.navigateTo();
-        await navBar.clickLinkMesas();
+        await navBar.clickLinkListaNegra();
         await listaNegra.clickLinkListarVetados();
 
-        expect(1).toBe(listaNegra.contarMesas());
+        expect(1).toBe(listaNegra.contarVetados());
     });
 
     afterEach(async () => {

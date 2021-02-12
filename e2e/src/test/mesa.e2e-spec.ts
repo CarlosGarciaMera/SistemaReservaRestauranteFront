@@ -16,7 +16,7 @@ describe('workspace-project Mesa', () => {
 
     it('Deberia crear mesa', async () => {
         const NOMBRE_MESA = 'Mesa Prueba';
-        const CANTIDAD_MAXIMA_COMENSALES = 8;
+        const CANTIDAD_MAXIMA_COMENSALES = 16;
 
         await page.navigateTo();
         await navBar.clickLinkMesas();
@@ -25,7 +25,7 @@ describe('workspace-project Mesa', () => {
         await mesa.ingresarCantidadMaximaComensales(CANTIDAD_MAXIMA_COMENSALES);
         await mesa.clickBotonCrearMesa();
         // Adicionamos las validaciones despues de la creación
-        expect(1).toEqual(mesa.contarMesas());
+        expect(mesa.contarMesas()).toBeGreaterThanOrEqual(1);
     });
 
     it('Deberia listar mesas', async () => {
@@ -33,7 +33,7 @@ describe('workspace-project Mesa', () => {
         await navBar.clickLinkMesas();
         await mesa.clickLinkListarMesas();
 
-        expect(1).toBe(mesa.contarMesas());
+        expect(mesa.contarMesas()).toBeGreaterThanOrEqual(1);
     });
 
     afterEach(async () => {

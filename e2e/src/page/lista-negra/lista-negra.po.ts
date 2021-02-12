@@ -28,7 +28,7 @@ export class ListaNegraPage {
         await this.botonCrearVetado.click();
     }
 
-    async contarMesas() {
+    async contarVetados() {
         return this.listaVetados.count();
     }
 }

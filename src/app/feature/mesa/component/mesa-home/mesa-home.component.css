@@ -1,0 +1,15 @@
+nav a {
+    color: hsl(0, 4%, 44%);;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    margin-right: 20px;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    padding-left: 5%;
+  }
+
+  nav a.router-link-active {
+    color: #106cc8;
+  }

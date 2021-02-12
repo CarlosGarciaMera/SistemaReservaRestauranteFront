@@ -2,7 +2,6 @@ import { HttpResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
-import { ReservaService } from 'src/app/feature/reserva/shared/service/reserva.service';
 import { Mesa } from '../model/mesa';
 
 import { MesaService } from './mesa.service';
@@ -15,7 +14,7 @@ describe('MesaService', () => {
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ReservaService, HttpService]
+      providers: [MesaService, HttpService]
     });
     httpMock = injector.inject(HttpTestingController);
     service = TestBed.inject(MesaService);

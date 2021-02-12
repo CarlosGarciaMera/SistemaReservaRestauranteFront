@@ -40,7 +40,7 @@ export class CrearReservaComponent implements OnInit {
     this.formularioReserva = new FormGroup({
       idCliente: new FormControl('', [Validators.required]),
       nombreCliente: new FormControl('', [Validators.required]),
-      numeroComensales: new FormControl('', [Validators.required]),
+      cantidadComensales: new FormControl('', [Validators.required]),
       fecha: new FormControl('', [Validators.required]),
     });
   }
