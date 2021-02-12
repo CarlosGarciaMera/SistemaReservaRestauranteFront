@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { ReservaService } from '../../shared/service/reserva.service';
 
 @Component({
@@ -10,8 +11,8 @@ import { ReservaService } from '../../shared/service/reserva.service';
 })
 export class CrearReservaComponent implements OnInit {
 
-  formularioReserva: FormGroup
-  constructor(protected servicio: ReservaService, private router: Router) { }
+  formularioReserva: FormGroup;
+  constructor(protected servicio: ReservaService, private router: Router) {}
 
   ngOnInit(): void {
     this.construirFormulario();
@@ -22,12 +23,18 @@ export class CrearReservaComponent implements OnInit {
       this.servicio.guardar(this.formularioReserva.value)
       .subscribe(
         _ => {
-          this.router.navigate(['reserva/listar'])
-          console.log("!Completed")
+          this.router.navigate(['reserva/listar']);
+          console.log("!Completed");
       },
-        error => console.log(JSON.stringify(error))
-      ); 
-    } 
+        error => {
+          console.log(JSON.stringify(error));
+          Swal.fire({
+            icon : 'error',
+            title : error.error.mensaje
+          });
+        }
+      );
+    }
   }
 
   private construirFormulario() {

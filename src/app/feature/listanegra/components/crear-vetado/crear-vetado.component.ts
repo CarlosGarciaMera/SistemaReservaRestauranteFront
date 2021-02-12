@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { ListanegraService } from '../../shared/service/listanegra.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ListanegraService } from '../../shared/service/listanegra.service';
 export class CrearVetadoComponent implements OnInit {
 
   formularioVetado: FormGroup;
-  constructor(protected servicio: ListanegraService, private router:Router) { }
+  constructor(protected servicio: ListanegraService, private router: Router) { }
 
   ngOnInit(): void {
     this.construirFormulario();
@@ -22,17 +23,22 @@ export class CrearVetadoComponent implements OnInit {
     this.servicio.guardar(this.formularioVetado.value)
     .subscribe(
       _ => {
-        this.router.navigate(['listanegra/listar'])
-        console.log("!Completed")
+        this.router.navigate(['listanegra/listar']);
     },
-      error => console.log(JSON.stringify(error))
-    );  
+      error => {
+        console.log(JSON.stringify(error));
+        Swal.fire({
+          icon : 'error',
+          title : error.error.mensaje
+        });
+      }
+    );
   }
 
   private construirFormulario() {
     this.formularioVetado = new FormGroup({
-      idVetado: new FormControl('', [Validators.required]),
-      nombreVetado: new FormControl('', [Validators.required])
+      idCliente: new FormControl('', [Validators.required]),
+      nombreCliente: new FormControl('', [Validators.required])
     });
   }
 

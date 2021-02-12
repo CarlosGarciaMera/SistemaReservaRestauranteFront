@@ -27,7 +27,7 @@ describe('ListanegraService', () => {
 
   it('deberia listar VETADOS', () => {
     const vetadosMock = [
-      new ListaNegra('1','1','Vetado 1'), new ListaNegra('2','2','Vetado 2')
+      new ListaNegra('1', '1', 'Vetado 1'), new ListaNegra('2', '2', 'Vetado 2')
     ];
     service.listar().subscribe(vetados => {
       expect(vetados.length).toBe(2);
@@ -39,7 +39,7 @@ describe('ListanegraService', () => {
   });
 
   it('deberia crear un vetado', () => {
-    const vetadoMock = new ListaNegra('1','1','Vetado 1');
+    const vetadoMock = new ListaNegra('1', '1', 'Vetado 1');
     service.guardar(vetadoMock).subscribe((respuesta) => {
       expect(respuesta).toEqual(1);
     });

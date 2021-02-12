@@ -16,7 +16,7 @@ describe('workspace-project Reserva', () => {
 
     it('Deberia crear mesa', () => {
         const NOMBRE_CLIENTE = 'Cliente reserva';
-        const ID_CLIENTE = '2'
+        const ID_CLIENTE = '2';
         const CANTIDAD_COMENSALES = 8;
         const FECHA = '2021-03-02 10:00:00';
 

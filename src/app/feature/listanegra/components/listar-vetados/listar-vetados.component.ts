@@ -10,7 +10,7 @@ import { ListanegraService } from '../../shared/service/listanegra.service';
 })
 export class ListarVetadosComponent implements OnInit {
 
-  public vetados: Observable<ListaNegra[]> 
+  public vetados: Observable<ListaNegra[]>;
 
   constructor(protected servicio: ListanegraService) { }
 
@@ -18,13 +18,12 @@ export class ListarVetadosComponent implements OnInit {
     this.vetados = this.servicio.listar();
   }
 
-  eliminar(id:string): void {
+  eliminar(id: string): void {
     this.servicio.eliminar(id) .subscribe(
       _ => {
         this.ngOnInit();
-        console.log("!Completed")
     },
       error => console.log(JSON.stringify(error))
-    );  ;
+    );
   }
 }

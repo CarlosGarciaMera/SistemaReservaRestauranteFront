@@ -11,7 +11,7 @@ describe('ListarMesaComponent', () => {
   let component: ListarMesaComponent;
   let fixture: ComponentFixture<ListarMesaComponent>;
   let servicio: MesaService;
-  const mesas: Mesa[] = [new Mesa('1','mesa1',8),new Mesa('2','mesa2',8),new Mesa('3','mesa3',8)];
+  const mesas: Mesa[] = [new Mesa('1', 'mesa1', 8), new Mesa('2', 'mesa2', 8), new Mesa('3', 'mesa3', 8)];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

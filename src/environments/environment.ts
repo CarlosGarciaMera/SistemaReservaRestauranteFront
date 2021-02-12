@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: '/reserva'
+  endpoint: 'http://localhost:8081/reserva'
 };
 
 /*

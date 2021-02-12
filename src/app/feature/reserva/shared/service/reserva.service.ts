@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core/services/http.service';
+import { environment } from 'src/environments/environment';
 import { Reserva } from '../model/reserva';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ReservaService {
 
   constructor(protected http: HttpService) { }
+  
   public listar() {
-    return this.http.doGet<Reserva[]>(`http://localhost:8081/reserva/reservas`, this.http.optsName('consultar mesas'));
+    return this.http.doGet<Reserva[]>(`${environment.endpoint}/reservas`, this.http.optsName('consultar mesas'));
   }
 
   public guardar(reserva: Reserva) {
-    return this.http.doPost<Reserva, number>(`http://localhost:8081/reserva/reservas`, reserva);
+    return this.http.doPost<Reserva, number>(`${environment.endpoint}/reservas`, reserva);
   }
 
   public eliminar(id: string) {
-    return this.http.doDelete<void>(`http://localhost:8081/reserva/reservas/${id}`,
-                                                 this.http.optsName('eliminar mesa'));
+    return this.http.doDelete<void>(`${environment.endpoint}/reservas/${id}`, this.http.optsName('eliminar mesa'));
   }
 
 }

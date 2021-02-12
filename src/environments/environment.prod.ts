@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  endpoint: '/reserva'
+  endpoint: 'http://localhost:8081/reserva'
 };

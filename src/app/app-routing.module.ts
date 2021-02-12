@@ -10,11 +10,10 @@ const routes: Routes = [
   { path: 'listanegra', loadChildren: () => import('./feature/listanegra/listanegra.module').then(mod => mod.ListanegraModule) },
   { path: 'mesa', loadChildren: () => import('./feature/mesa/mesa.module').then(mod => mod.MesaModule) },
   { path: 'reserva', loadChildren: () => import('./feature/reserva/reserva.module').then(mod => mod.ReservaModule) }
-  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

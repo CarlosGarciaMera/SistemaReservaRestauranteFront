@@ -27,7 +27,7 @@ describe('ReservaService', () => {
 
   it('deberia listar reservas', () => {
     const reservasMock = [
-      new Reserva('1','1','reserva 1', 4, '2021-03-02 10:00:00', '1'), new Reserva('2','2','reserva 2', 4, '2021-03-02 10:00:00', '2')
+      new Reserva('1', '1', 'reserva 1', 4, '2021-03-02 10:00:00', '1'), new Reserva('2', '2', 'reserva 2', 4, '2021-03-02 10:00:00', '2')
     ];
     service.listar().subscribe(reservas => {
       expect(reservas.length).toBe(2);
@@ -39,7 +39,7 @@ describe('ReservaService', () => {
   });
 
   it('deberia crear una reserva', () => {
-    const reservaMock = new Reserva('1','1','reserva 1', 4, '2021-03-02 10:00:00', '1');
+    const reservaMock = new Reserva('1', '1', 'reserva 1', 4, '2021-03-02 10:00:00', '1');
     service.guardar(reservaMock).subscribe((respuesta) => {
       expect(respuesta).toEqual(1);
     });

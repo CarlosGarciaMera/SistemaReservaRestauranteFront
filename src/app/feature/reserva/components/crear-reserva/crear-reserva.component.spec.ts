@@ -25,7 +25,7 @@ describe('CrearReservaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CrearReservaComponent);
     component = fixture.componentInstance;
-    servicio= TestBed.inject(ReservaService);
+    servicio = TestBed.inject(ReservaService);
     spyOn(servicio, 'guardar').and.returnValue(
       of(1)
     );

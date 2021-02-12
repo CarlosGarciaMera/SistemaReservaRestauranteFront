@@ -10,21 +10,21 @@ import { ReservaService } from '../../shared/service/reserva.service';
 })
 export class ListarReservaComponent implements OnInit {
 
-  public reservas: Observable<Reserva[]>
+  public reservas: Observable<Reserva[]>;
 
   constructor(protected servicio: ReservaService) { }
 
   ngOnInit(): void {
-    this.reservas= this.servicio.listar();
+    this.reservas = this.servicio.listar();
   }
 
-  cancelarReserva(id:string): void {
+  cancelarReserva(id: string): void {
     this.servicio.eliminar(id) .subscribe(
       _ => {
         this.ngOnInit();
-        console.log("!Completed")
+        console.log("!Completed");
     },
       error => console.log(JSON.stringify(error))
-    );  ;
+    );
   }
 }

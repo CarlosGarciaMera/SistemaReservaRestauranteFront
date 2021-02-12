@@ -11,7 +11,7 @@ describe('ListarVetadosComponent', () => {
   let component: ListarVetadosComponent;
   let fixture: ComponentFixture<ListarVetadosComponent>;
   let servicio: ListanegraService;
-  const vetados: ListaNegra[] = [new ListaNegra('1','1','Vetado 1'), new ListaNegra('2','2','Vetado 2')];
+  const vetados: ListaNegra[] = [new ListaNegra('1', '1', 'Vetado 1'), new ListaNegra('2', '2', 'Vetado 2')];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

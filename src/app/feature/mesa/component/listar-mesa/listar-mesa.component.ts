@@ -16,15 +16,15 @@ export class ListarMesaComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaMesas = this.servicio.listar();
-  } 
+  }
 
-  eliminar(id:string): void {
+  eliminar(id: string): void {
     this.servicio.eliminar(id) .subscribe(
       _ => {
         this.ngOnInit();
-        console.log("!Completed")
+        console.log("!Completed");
     },
       error => console.log(JSON.stringify(error))
-    );  ;
+    );
   }
 }

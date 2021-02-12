@@ -41,13 +41,13 @@ describe('CrearMesaComponent', () => {
   });
 
   it('formulario es valido', () => {
-    component.formulario.controls.nombreMesa.setValue('Mesa 1');
+    component.formulario.controls.nombre.setValue('Mesa 1');
     component.formulario.controls.cantidadMaximaComensales.setValue(4);
     expect(component.formulario.valid).toBeTruthy();
   });
 
   it('Crear Mesa', () => {
-    component.formulario.controls.nombreMesa.setValue('Mesa 1');
+    component.formulario.controls.nombre.setValue('Mesa 1');
     component.formulario.controls.cantidadMaximaComensales.setValue(4);
     component.crear();
   });

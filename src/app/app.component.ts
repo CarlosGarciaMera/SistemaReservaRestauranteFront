@@ -14,9 +14,5 @@ export class AppComponent {
     { url: '/listanegra', nombre: 'listanegra' },
     { url: '/mesa', nombre: 'mesa' },
     { url: '/reserva', nombre: 'reserva' }
-
-    
   ];
-
-  
 }

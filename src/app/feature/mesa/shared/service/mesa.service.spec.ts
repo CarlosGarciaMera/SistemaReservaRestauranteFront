@@ -28,7 +28,7 @@ describe('MesaService', () => {
 
   it('deberia listar mesas', () => {
     const mesasMock = [
-      new Mesa('1','mesa1',8),new Mesa('2','mesa2',8),new Mesa('3','mesa3',8)
+      new Mesa('1', 'mesa1', 8), new Mesa('2', 'mesa2', 8), new Mesa('3', 'mesa3', 8)
     ];
     service.listar().subscribe(mesas => {
       expect(mesas.length).toBe(3);
@@ -40,7 +40,7 @@ describe('MesaService', () => {
   });
 
   it('deberia crear una mesa', () => {
-    const mesaMock = new Mesa('1','mesa 1',8);
+    const mesaMock = new Mesa('1', 'mesa 1', 8);
     service.guardar(mesaMock).subscribe((respuesta) => {
       expect(respuesta).toEqual(1);
     });
